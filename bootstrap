@@ -1,10 +1,22 @@
+# install software-properties-common for add-apt-repository
+apt install -y software-properties-common git
+
+# add ansible PPA repository & update apt
+add-apt-repository --yes --update ppa:ansible/ansible
+apt update
+
+# install ansible & git
 apt install -y ansible git
 
-ansible-galaxy collection install community.general
+# install ansible community.general collection
+# ansible-galaxy collection install community.general
 
+# read vault location
 read -p "bootstrap vault location [/mnt/vault/bootstrap.yml]: " bootstrapvaultpath
 bootstrapvaultpath=${bootstrapvaultpath:-/mnt/vault/bootstrap.yml}
 
+# run bootstrap playbook
 ANSIBLE_ASK_VAULT_PASS=True ansible-pull -U https://github.com/xoh/ansible -e "bootstrap_vault=$bootstrapvaultpath" plays/bootstrap.yml
 
+# call to action
 echo "Reboot, Remount, Run maas"
