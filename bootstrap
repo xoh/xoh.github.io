@@ -3,7 +3,6 @@ apt install -y software-properties-common git
 
 # add ansible PPA repository & update apt
 add-apt-repository --yes --update ppa:ansible/ansible
-apt update
 
 # install ansible & git
 apt install -y ansible git
