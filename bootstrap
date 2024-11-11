@@ -16,4 +16,3 @@ bootstrapvaultpath=${bootstrapvaultpath:-/mnt/vault/bootstrap.yml}
 
 # run bootstrap playbooks
 ANSIBLE_ASK_VAULT_PASS=True ansible-pull -U https://github.com/xoh/ansible -e "bootstrap_vault=$bootstrapvaultpath" plays/bootstrap.yml
-ANSIBLE_ASK_VAULT_PASS=True ansible-pull -U https://github.com/xoh/ansible -e "bootstrap_vault=$bootstrapvaultpath" plays/setup_$HOSTNAME.yml
