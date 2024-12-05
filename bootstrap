@@ -7,8 +7,8 @@ add-apt-repository --yes --update ppa:ansible/ansible
 # install ansible & git
 apt install -y ansible git
 
-# install ansible community.general collection
-# ansible-galaxy collection install community.general
+# install ansible cloud.terraform collection
+ansible-galaxy collection install cloud.terraform
 
 # read vault location
 read -p "bootstrap vault location [/mnt/vault/bootstrap.yml]: " bootstrapvaultpath
